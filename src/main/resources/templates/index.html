@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Management System</title>
+
+<link rel = "stylesheet"
+	href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity = "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin = "anonymous">
+	
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+
+	<div class = "container my-2">
+	<h1>Termini</h1>
+	<a th:href = "@{/showAdministration}" class = "btn btn-primary btn-sm mb-3">Menadzment</a>
+	<table border="1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th> Termin </th>
+				<th> Klijent </th>
+				<th> Delatnost </th>
+				<th> Zaposleni </th>
+				<th> Usluga </th>
+				<th> Actions </th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--  <tr th:each="customer : ${listCustomers}">
+				<td th:text="${customer.firstName}"></td>
+				<td th:text="${customer.lastName}"></td>
+				<td th:text="${customer.email}"></td>
+				<td th:text="${customer.tel}"></td>
+				<td> <a th:href = "@{/showFormForUpdate/{id}(id=${customer.id})}" class = "btn btn-primary">Update</a>
+				<a th:href = "@{/deleteCustomer/{id}(id=${customer.id})}" class = "btn btn-danger">Delete</a></td>
+			
+			</tr>-->
+		
+		
+		</tbody>
+		
+	
+	</table>
+
+
+</div>
+
+<div class = "container my-2">
+<h1>Zakazivanje termina</h1>
+<table border="1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th> Termin </th>
+				<th> Klijent </th>
+				<th> Delatnost </th>
+				<th> Zaposleni </th>
+				<th> Usluga </th>
+				<th> Actions </th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		<td>termini</td>
+		<td>
+		<select name = "customer">
+			<option th:each = "customer :${listCustomers}"
+			th:text = ${customer.firstName}>
+		</select>
+		</td>
+		<td>
+			<select name = "profesional">
+			<option th:each = "profesional :${listProfesionals}"
+			th:text = ${profesional.name}>	
+		</select>
+		</td>
+		<td>
+			<select name = "employee">
+			<option th:each = "employee :${listEmployees}"
+			th:text = ${employee.firstName}>
+		</select>
+		</td>
+		<td>
+			<select name = "usluga">
+			<option th:each = "usluga :${listUsluga}"
+			th:text = ${usluga.name}>
+		</select>
+		</td>
+		<td>
+			<a th:href = "@{/}" class = "btn btn-primary btn-sm mb-3">Zakazi</a>
+		</td>
+			<!--  <tr th:each="customer : ${listCustomers}">
+				<td th:text="${customer.firstName}"></td>
+				<td th:text="${customer.lastName}"></td>
+				<td th:text="${customer.email}"></td>
+				<td th:text="${customer.tel}"></td>
+				<td> <a th:href = "@{/showFormForUpdate/{id}(id=${customer.id})}" class = "btn btn-primary">Update</a>
+				<a th:href = "@{/deleteCustomer/{id}(id=${customer.id})}" class = "btn btn-danger">Delete</a></td>
+			
+			</tr>-->
+		
+		
+		</tbody>
+		
+	<div class="container">
+        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Input Date</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+	</table>
+	
+			<!-- </div>
+			<div><select name = "employee">
+			<option th:each = "employee :${listEmployees}"
+			th:text = ${employee.firstName}>
+		</select>
+		</div> -->
+</body>
+</html>
